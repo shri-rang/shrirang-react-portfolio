@@ -47,7 +47,12 @@ const Navbar = () => {
             </div>
             {/* CTA Button */}
             <div className="hidden md:block"  >
-                <Button size="sm" >Contact Me</Button>
+                <Button size="sm" >
+                  <a href="#contact">
+                  Contact Me
+                  </a>
+                 
+                  </Button>
             </div>
                {/* Mobile Menu Button */}
            <button  onClick={ ()=> setIsMobileMenuOpen( (prev)=>  !prev )} className="md:hidden p-2 text-foreground " >
@@ -61,8 +66,11 @@ const Navbar = () => {
               isMobileMenuOpen && (<div className="md:hidden glass-strong animate-fade-in" >
                <div className="container mx-auto px-6 py-6 flex flex-col gap-4 " >
             {navLinks.map( (link, index)=>( <a key={index} href={link.href} 
+                onClick={ ()=> setIsMobileMenuOpen(false) }
                 className="text-lg text-muted-foreground hove:text-foreground py-2" >{link.lable}</a>) )}  
-                     <Button >Contact Me</Button>
+                     <Button onClick={ ()=>setIsMobileMenuOpen(false)} >
+                       <a href="#contact">Contact Me</a>        
+                      </Button>
                </div>
              
             </div>)

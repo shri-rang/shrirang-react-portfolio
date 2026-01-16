@@ -1,24 +1,27 @@
 
 import React from 'react'
 import Button from '../components/Button'
-import { ArrowRight, Download, Github, Linkedin,Twitter, ChevronDown  } from 'lucide-react'
+import { ArrowRight, Download, Github, Linkedin,Twitter, ChevronDown } from 'lucide-react'
 import { AnimatedBorderButton } from '../components/AnimatedButton'
 
 const skills = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Javascript",
-  "Node.js",
-  "MongoDB",
-  "Vercel",
-  "Tailwind CSS",
-  "Prisma",
-  "Flutter",
-  "Dart",
-  "Figma",
-  "Git",
+ { tech: "React", icon: "/icons/React.svg"  },
+ { tech: "Next.js", icon:"/icons/Next.js.svg" },
+ { tech: "TypeScript", icon: "/icons/TypeScript.svg" },
+ { tech: "Javascript", icon: "/icons/JavaScript.svg" },
+ { tech: "Node.js", icon: "/icons/Node.js.svg" },
+ { tech: "MongoDB", icon: "/icons/MongoDB.svg" },
+ { tech: "Vercel", icon: "/icons/Vercel.svg" },
+ { tech: "Tailwind CSS", icon: "/icons/Tailwind CSS.svg" },
+//  { tech: "Prisma", icon: "" },
+ { tech: "Flutter", icon: "/icons/Flutter.svg" },
+ { tech: "Dart", icon: "/icons/Dart.svg" },
+//  { tech: "Figma", icon: Nextjs },
+ { tech: "Github", icon: "/icons/GitHub.svg" },
+ { tech: "Git", icon: "/icons/Git.svg" },
+ 
 ];
+
 
 export const Hero = () => {
   return (
@@ -66,7 +69,7 @@ export const Hero = () => {
             {/* Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                Crafting <span className="text-primary glow-text">digital</span>
+                Engineering <span className="text-primary glow-text">digital</span>
                 <br />
                 experiences with
                 <br />
@@ -74,17 +77,16 @@ export const Hero = () => {
                   precision.
                 </span>
               </h1>
-              <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Pedro Machado — a software engineer specializing in
-                React, Next.js, and TypeScript. I build scalable, performant web
-                applications that users love.
+              <p className="text-lg text-white/60 max-w-lg animate-fade-in animation-delay-200">
+                Hi, I’m Shrirang Jangam — a software engineer specializing in React, Next.js, TypeScript, and Flutter. I build scalable, high-performance web and mobile applications focused on clean architecture, great UX, and real-world impac
               </p>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
               <Button size="lg">
-                Contact Me <ArrowRight className="w-5 h-5" />
+                   <a href="#contact">Contact Me</a>     
+                   <ArrowRight className="w-5 h-5" />
               </Button>
               <AnimatedBorderButton
               
@@ -124,7 +126,7 @@ export const Hero = () => {
               />
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img
-                  src="/profile-photo.jpg"
+                  src="/shri.jpg"
                   alt="Pedro Machado"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
                 />
@@ -152,7 +154,7 @@ export const Hero = () => {
 
         {/* Skills Section */}
         <div className="mt-20 animate-fade-in animation-delay-600">
-          <p className="text-sm text-muted-foreground mb-6 text-center">
+          <p className="text-1xl text-muted-foreground mb-6 text-center">
             Technologies I work with
           </p>
           <div className="relative overflow-hidden">
@@ -166,9 +168,16 @@ export const Hero = () => {
             />
             <div className="flex animate-marquee">
               {[...skills, ...skills].map((skill, idx) => (
-                <div key={idx} className="flex-shrink-0 px-8 py-4">
-                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
-                    {skill}
+                <div key={idx} className="group flex-shrink-0 px-4 py-4 flex flex-col items-center justify-center ">
+                    {/* <skill.icon/> */}
+                    <div
+                     className= 'bg-muted group-hover:bg-white/60 transition-colors group py-2 px-2 mb-1 rounded-lg flex items-center justify-center'
+                    >
+                      <img className='w-10 h-10 object-contain'  src={skill.icon} />
+                    </div>
+                    
+                  <span className="text-xl font-semibold text-muted-foreground/50 group-hover:text-muted-foreground transition-colors">
+                    {skill.tech}
                   </span>
                 </div>
               ))}
