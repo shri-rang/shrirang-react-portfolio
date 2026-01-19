@@ -59,13 +59,12 @@ const Projects = () => {
     title: "Samruddhi - TMart Loyalty App",
     description:
       "Its Loyalty app for recognize and reward the loyalty and trust of its Influencers",
-    image: "/projects/project4.png",
+    image: "/projects/samrudhi.png",
     tags: ["Flutter", "Dart", "Github", "Git"],
     link: "https://play.google.com/store/apps/details?id=com.tmart.samruddhi",
     github: "#",
   },
   
-
 ];
 
 
